@@ -1,0 +1,233 @@
+﻿body {
+    margin: 0;
+    background-image: url("3d-pixel-art-grass_hu1334935553997487101.webp");
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Pixelify Sans", serif;
+    font-weight: 600;
+}
+
+
+/* Container holds the egg halves and the chick.
+           (The container and its elements remain scaled as before.) */
+.container {
+    position: relative;
+    margin: 25px auto;
+    width: 128px;
+    height: 160px;
+}
+/* Egg halves: each half uses an 8-column grid with 16×16px "pixels" */
+.egg-half {
+    position: absolute;
+    width: 128px;
+    display: grid;
+    grid-template-columns: repeat(8, 16px);
+}
+/* Top half: 4 rows (64px tall) */
+.top-half {
+    top: 0;
+    grid-template-rows: repeat(4, 16px);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+/* Bottom half: 6 rows (96px tall) */
+.bottom-half {
+    top: 64px;
+    grid-template-rows: repeat(6, 16px);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+/* Each pixel is 16×16px */
+.pixel {
+    width: 16px;
+    height: 16px;
+}
+/* Colors */
+.white {
+    background: #e0e0dc;
+}
+
+.empty {
+    background: transparent;
+}
+
+.yellow {
+    background: #ffcc00;
+}
+
+.black {
+    background: #000;
+}
+
+.orange {
+    background: #ff6600;
+}
+/* Egg cracking animation: when .cracked is added, slide halves apart */
+.container.cracked .top-half {
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.container.cracked .bottom-half {
+    transform: translateY(40px);
+    opacity: 0;
+}
+/* The chick uses a 5×4 grid with each pixel 16×16px (overall size 80×64px).
+           It is centered over the egg. */
+.chick {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 64px;
+    display: grid;
+    grid-template-columns: repeat(5, 16px);
+    grid-template-rows: repeat(4, 16px);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin-bottom: 0px;
+}
+
+    .chick.visible {
+        opacity: 1;
+    }
+/* Eye animations */
+.eye {
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background: #000;
+    }
+
+    50% {
+        background: transparent;
+    }
+}
+
+@keyframes wink {
+    to {
+        background: transparent;
+    }
+}
+
+
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.window {
+    margin: 0px auto;
+    width: 40%;
+    max-width: 600px;
+    height: 50vh;
+    max-height: 400px;
+    background-color: #f5dd2a;
+    border-radius: 15px;
+    border: 2px solid #ff6600;
+    opacity: 0;
+    animation: bounceIn 1s ease-out forwards;
+    animation-delay: 3s; /* Wait for chick animation to finish */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.timer__btn {
+    width: 100%;
+    height: 60%;
+    background: #ff6600;
+    font-family: "Pixelify Sans", serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+    .timer__btn:hover {
+        background-color: #66cc66;
+    }
+
+    .timer__btn:active {
+        transform: scale(0.95);
+    }
+
+.window h2{
+    width: 80%;
+    margin: 10px auto;
+}
+
+.timer {
+    font-size: 2.3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.window span {
+    font-size: 2em;
+    font-weight: 800;
+    color: #ff6600;
+}
+
+@media (max-width: 600px) {
+    .window {
+        width: 75%;
+        height: 70vh;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .window {
+        width: 70%;
+        max-height: 560px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .btn {
+        font-size: 3em;
+    }
+    .timer {
+        font-size: 3.2em;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1025px) {
+    h2{
+        font-size: 1.2em;
+    }
+}
+
+@media (min-height: 1200px){
+    .window{
+        width: 70%;
+        max-height: 600px
+    }
+
+    h2{
+        font-size:2.5em;
+    }
+
+    .btn{
+        font-size: 3em;
+    }
+}
+

@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perfeggt Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="baby-chicken.png" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <audio id="startup-sound" preload="auto">
+        <source src="short-chick-sound-171389.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <!-- Top Half of Egg: 4 rows -->
+        <div class="egg-half top-half">
+            <!-- Row 1: narrow top (2 empty, 4 white, 2 empty) -->
+            <div class="pixel empty"></div>
+            <div class="pixel empty"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel empty"></div>
+            <div class="pixel empty"></div>
+            <!-- Row 2 -->
+            <div class="pixel empty"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel empty"></div>
+            <!-- Row 3 -->
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <!-- Row 4 -->
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+        </div>
+        <!-- Bottom Half of Egg: 6 rows -->
+        <div class="egg-half bottom-half">
+            <!-- Row 1 -->
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <!-- Row 2 -->
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <!-- Row 3 -->
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <!-- Row 4 -->
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <!-- Row 5: tapering -->
+            <div class="pixel empty"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel empty"></div>
+            <!-- Row 6: more tapering -->
+            <div class="pixel empty"></div>
+            <div class="pixel empty"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel white"></div>
+            <div class="pixel empty"></div>
+            <div class="pixel empty"></div>
+        </div>
+        <!-- Pixelated Chick: 5 columns × 4 rows (80×64px overall) -->
+        <div class="chick">
+            <!-- Row 1 -->
+            <div class="pixel empty"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel empty"></div>
+            <!-- Row 2 -->
+            <div class="pixel yellow"></div>
+            <div class="pixel eye black" id="left-eye"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel eye black" id="right-eye"></div>
+            <div class="pixel yellow"></div>
+            <!-- Row 3 -->
+            <div class="pixel yellow"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel orange"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel yellow"></div>
+            <!-- Row 4 -->
+            <div class="pixel empty"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel yellow"></div>
+            <div class="pixel empty"></div>
+
+
+        </div>
+    </div>
+    <div class="window">
+        <h2>Hi :) Just bring water to a boil, put your eggs in, and start the <span>Perfeggt Timer!</span></h2>
+        
+        <div class="timer">11:00</div>
+        <audio id="alarmSound">
+            <source src="alarm-clock-90867.mp3" type="audio/mpeg" />
+        </audio>
+        <audio id="startSound" src="short-chick-sound-171389.mp3"></audio>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
